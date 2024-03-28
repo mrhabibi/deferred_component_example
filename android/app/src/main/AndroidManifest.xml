@@ -2,7 +2,7 @@
     package="com.example.deferred_component_example">
    <application
         android:label="deferred_component_example"
-        android:name="${applicationName}"
+        android:name="io.flutter.embedding.android.FlutterPlayStoreSplitApplication"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -30,5 +30,6 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <meta-data android:name="io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager.loadingUnitMapping" android:value="2:boxComponent"/>
     </application>
 </manifest>
