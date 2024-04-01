@@ -20,17 +20,19 @@ class _SomeWidgetState extends State<SomeWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder<void>(
-        future: _libraryFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            if (snapshot.hasError) {
-              return Text('Error: ${snapshot.error}');
+      body: Center(
+        child: FutureBuilder<void>(
+          future: _libraryFuture,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              if (snapshot.hasError) {
+                return Text('Error: ${snapshot.error}');
+              }
+              return box.DeferredBox();
             }
-            return box.DeferredBox();
-          }
-          return const CircularProgressIndicator();
-        },
+            return const CircularProgressIndicator();
+          },
+        ),
       ),
     );
   }
